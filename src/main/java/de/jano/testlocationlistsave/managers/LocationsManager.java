@@ -24,8 +24,11 @@ public class LocationsManager {
                         Double.parseDouble(plugin.getConfigManager().get("locations." + key + ".y").toString()),
                         Double.parseDouble(plugin.getConfigManager().get("locations." + key + ".z").toString()));
                 locations.add(location);
-                Bukkit.getServer().getLogger().info("Location found number:!" + key);
+
             }
+        }
+        for (Location location : locations) {
+            location.getWorld().getBlockAt(location).setType(org.bukkit.Material.CHEST);
         }
     }
 
@@ -40,4 +43,7 @@ public class LocationsManager {
 
     }
 
+    public List<Location> getLocations() {
+        return locations;
+    }
 }
