@@ -13,8 +13,13 @@ public class ChestListener implements Listener {
     }
     @EventHandler
     public void onChestOpen(BlockBreakEvent event) {
+        Bukkit.broadcastMessage("Block broken!");
+
         if(!event.getBlock().getType().name().contains("CHEST")) return;
+        Bukkit.broadcastMessage("Chest broken!");
+        Bukkit.broadcastMessage("Locations: " + locationsManager.getLocations().size());
         if(!locationsManager.getLocations().contains(event.getBlock().getLocation())) return;
+        Bukkit.broadcastMessage("Chest is in list!");
         event.setCancelled(true);
         Bukkit.broadcastMessage("You can't break this chest!");
 
