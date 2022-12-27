@@ -1,0 +1,13 @@
+name: Testlocationlistsave
+version: '${project.version}'
+main: de.jano.testlocationlistsave.TestLocationListSave
+api-version: 1.19
+authors: [ JanoDasHuhn ]
+description: test
+commands:
+  addlocation:
+    description: add a location
+    usage: /addlocation
+    permission: testlocationlistsave.addlocation
+    permission-message: You don't have the permission to use this command!
+    aliases: [al]
